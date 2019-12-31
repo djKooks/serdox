@@ -1,9 +1,9 @@
-defmodule Serdix.MixProject do
+defmodule Serdox.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :serdix,
+      app: :serdox,
       version: "0.1.0",
       elixir: "~> 1.9",
       compilers: [:rustler] ++ Mix.compilers,
@@ -30,8 +30,8 @@ defmodule Serdix.MixProject do
   end
 
   defp rustler_crates() do
-    [serdix: [
-      path: "native/serdix",
+    [serdox: [
+      path: "native/serdox",
       mode: (if Mix.env == :prod, do: :release, else: :debug),
     ]]
   end

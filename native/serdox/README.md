@@ -1,4 +1,4 @@
-# NIF for Elixir.Serdix
+# NIF for Elixir.Serdox
 
 ## To build the NIF module:
 
@@ -9,8 +9,8 @@
 ## To load the NIF:
 
 ```elixir
-defmodule Serdix do
-    use Rustler, otp_app: <otp-app>, crate: "serdix"
+defmodule Serdox do
+    use Rustler, otp_app: <otp-app>, crate: "serdox"
 
     # When your NIF is loaded, it will override this function.
     def add(_a, _b), do: :erlang.nif_error(:nif_not_loaded)

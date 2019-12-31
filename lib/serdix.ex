@@ -1,6 +1,6 @@
-defmodule Serdix do
+defmodule Serdox do
   @moduledoc """
-  Documentation for Serdix.
+  Documentation for Serdox.
   """
 
   @doc """
@@ -8,7 +8,7 @@ defmodule Serdix do
 
   ## Examples
 
-      iex> Serdix.hello()
+      iex> Serdox.hello()
       :world
 
   """

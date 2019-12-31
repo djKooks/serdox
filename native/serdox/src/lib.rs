@@ -1,5 +1,4 @@
 #[macro_use] extern crate rustler;
-#[macro_use] extern crate lazy_static;
 
 use rustler::{Encoder, Env, Error, Term};
 
@@ -13,9 +12,10 @@ mod atoms {
 }
 
 rustler_export_nifs! {
-    "Elixir.Serdix.Native",
+    "Elixir.Serdox.Native",
     [
-        ("add", 2, add)
+        ("add", 2, add),
+        ("decode", 1, decode)
     ],
     None
 }
@@ -25,4 +25,11 @@ fn add<'a>(env: Env<'a>, args: &[Term<'a>]) -> Result<Term<'a>, Error> {
     let num2: i64 = args[1].decode()?;
 
     Ok((atoms::ok(), num1 + num2).encode(env))
+}
+
+fn decode<'a>(env: Env<'a>, args: &[Term<'a>]) -> Result<Term<'a>, Error> {
+    // let source = args[0].decode();
+    // println!("Source: {:?}", args[0].decode());
+
+    Ok((atoms::ok(), 0).encode(env))
 }
